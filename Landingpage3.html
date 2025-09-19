@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luxury "S" Sneakers | Premium Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #171717;
+      --secondary: #fff;
+      --accent: #c1272d;
+      --gold: #e6b800;
+      --shadow: 0 8px 32px rgba(0,0,0,0.14);
+      --font-main: 'Montserrat', Arial, sans-serif;
+      --font-accent: 'Poppins', sans-serif;
+      --radius: 1.2rem;
+      --transition: all 0.3s ease;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      background: var(--secondary);
+      color: var(--primary);
+      letter-spacing: 0.2px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--primary);
+      color: var(--secondary);
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      box-shadow: var(--shadow);
+    }
+    .logo {
+      font-family: var(--font-accent);
+      font-size: 2rem;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+    }
+    .logo span {
+      background: var(--gold);
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-right: 10px;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+      border: 1px solid var(--primary);
+    }
+    nav {
+      display: flex;
+      gap: 2vw;
+    }
+    nav a {
+      color: var(--secondary);
+      font-size: 1rem;
+      text-decoration: none;
+      font-family: var(--font-accent);
+      transition: color 0.2s;
+    }
+    nav a:hover {color: var(--gold);}
+    .hero {
+      background: linear-gradient(95deg, #f9f9f9 40%, #fff7e6 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6vh 0 5vh 0;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-family: var(--font-accent);
+      color: var(--primary);
+      background: linear-gradient(90deg,#c1272d 40%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.19rem;
+      margin: 1vh 0 2vh 0;
+      color: #333;
+      max-width: 650px;
+      margin-left:auto;margin-right:auto;
+    }
+    .hero-img {margin-top:2vh;}
+    .hero-img img {
+      width: 320px;
+      border-radius: 2rem;
+      box-shadow: 0 10px 30px rgba(193,39,45,0.14);
+      border: 3px solid var(--gold);
+      background: #fff;
+      padding: 8px;
+      transition: filter 0.3s;
+      filter: drop-shadow(0 4px 24px #c1272d88);
+    }
+    .cta-btn {
+      margin-top: 2.5vh;
+      font-size: 1.5rem;
+      padding: 0.85rem 2.6rem;
+      border-radius: var(--radius);
+      border: none;
+      background: var(--gold);
+      color: var(--primary);
+      font-weight: 600;
+      box-shadow: 0 6px 16px #e6b80055;
+      cursor: pointer;
+      font-family: var(--font-accent);
+      letter-spacing: 1.5px;
+      transition: var(--transition);
+    }
+    .cta-btn:hover {background: var(--accent);color:var(--secondary);}
+    /* Sneaker products grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2vw;
+      padding: 5vh 4vw 3vh 4vw;
+      background: #f4f4fa;
+    }
+    .product-card {
+      background: var(--secondary);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 16px #e6b80013;
+      padding: 2vh 1vw;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: var(--transition);
+      position:relative;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 32px #c1272d29;
+      z-index:2;
+      transform: translateY(-4px) scale(1.03);
+    }
+    .prod-img {
+      width: 170px;
+      height: 120px;
+      background: #f8e0b663;
+      border-radius: 1rem;
+      margin-bottom: 1.2vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow:hidden;
+    }
+    .prod-img img {
+      width: 140px;
+      border-radius: 0.7rem;
+      filter: drop-shadow(0 3px 12px #c1272d44);
+    }
+    .s-logo {
+      position:absolute;
+      top:10px;left:15px;
+      background:var(--gold);
+      color:var(--primary);
+      font-size:1.6rem;
+      font-family: var(--font-accent);
+      padding: 2px 9px;
+      border-radius: 14px;
+      font-weight:bold;
+      box-shadow:0 2px 8px #17171722;
+    }
+    .prod-title {
+      font-size:1.4rem;
+      font-family: var(--font-accent);
+      font-weight: 600;
+      margin:1vh 0 0.4vh 0;
+      color:#c1272d;
+    }
+    .prod-desc {
+      font-size:1.01rem;
+      color: #444;
+      margin-botom:0.9vh;
+      min-height:42px;
+    }
+    .specs {
+      font-size:0.98rem;
+      margin:1vh 0 0.7vh 0;
+      color: #131313;
+      text-align:left;
+      line-height:1.4;
+    }
+    .prod-price {
+      font-size:1.4rem;
+      margin:1.5vh 0 1vh 0;
+      color: var(--gold);
+      font-weight:500;
+      font-family: var(--font-accent);
+    }
+    .prod-buy-btn {
+      padding:0.7em 1.4em;
+      font-size:1rem;
+      border-radius: 1rem;
+      background: var(--accent);
+      color: var(--secondary);
+      border: none;
+      font-family: var(--font-accent);
+      font-weight: 600;
+      transition:background 0.2s;
+      cursor:pointer;
+      box-shadow: 0 4px 15px #c1272d22;
+      margin-bottom:1vh;
+    }
+    .prod-buy-btn:hover {
+      background: var(--gold);
+      color: var(--primary);
+    }
+    /* Features grid */
+    .features-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:2vw;
+      padding:5vh 4vw 3vh 4vw;
+      background:#fff;
+      border-bottom:1px solid #e6b80042;
+    }
+    .feature-card {
+      background: #fafafc;
+      border-radius:1.1rem;
+      padding:2vh 1vw;
+      text-align:center;
+      box-shadow:0 1px 8px #e6b80018;
+      display:flex;flex-direction:column;align-items:center;
+    }
+    .feature-icon {
+      font-size:2.5rem;
+      color:var(--gold);
+      margin-bottom: 1vh;
+    }
+    .feature-title {
+      font-family:var(--font-accent);
+      font-size:1.19rem;
+      font-weight:600;
+      margin-bottom:0.5vh;
+    }
+    .feature-desc {
+      font-size:0.99rem;
+      color:#222;
+    }
+    /* Sections */
+    section {
+      padding:5vh 4vw 2.5vh 4vw;
+      max-width:1400px;
+      margin:auto;
+    }
+    .section-header {
+      font-size:2rem;
+      color:var(--accent);
+      font-weight:700;
+      margin-bottom:1.9vh;
+      font-family:var(--font-accent);
+      text-align:center;
+    }
+    .pricing-section {
+      background:#f9f9f9;
+      border-radius:1.2rem;
+      box-shadow:0 2px 24px #e6b80015;
+      margin-bottom:2vh;
+      padding-bottom:1vh;
+    }
+    .pricing-cards {display:flex;
+      gap:2vw;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .price-card {
+      background:#fff;
+      border-radius:1rem;
+      padding:2vh 2vw;
+      box-shadow:0 2px 18px #c1272d13;
+      text-align:center;
+      min-width:220px;
+      margin-bottom:2vw;
+      border:2px solid #e6b80022;
+      display:flex;flex-direction:column;align-items:center;
+      justify-content:center;
+      transition:var(--transition);
+    }
+    .price-card.active,
+    .price-card:hover {
+      border-color:var(--gold);
+      box-shadow: 0 8px 40px #e6b80022;
+      transform:scale(1.045);
+    }
+    .price-title {
+      font-size:1.23rem;font-family:var(--font-accent);
+      font-weight:600;color:var(--accent);
+      margin-bottom:0.7vh;
+    }
+    .price-amount {
+      font-size:1.68rem;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:0.9vh;
+    }
+    .price-features {
+      font-size:1rem;
+      color:#222;
+      line-height:1.6;
+      margin-bottom:1vh;
+      text-align:center;
+    }
+    /* Contact, waitlist, preorder, etc */
+    .form-section {
+      max-width:700px;margin:auto;
+      background:#fff;
+      padding:3vh 2vw;
+      border-radius:1rem;
+      box-shadow:0 2px 20px #1717170d;
+      margin-bottom:3vh;
+    }
+    .form-section h3 {color:var(--accent);margin-bottom:1vh;}
+    label {display:block;font-size:1rem;margin-bottom:0.2vh;}
+    input, textarea {
+      width:100%;
+      padding:0.8em;
+      margin:0.7vh 0 1.2vh 0;
+      border-radius:0.7rem;
+      border:1px solid #cacaca;
+      background:#f8f8fa;
+      font-size:1rem;
+      font-family:var(--font-main);
+      transition:border-color 0.2s;
+    }
+    input:focus, textarea:focus {border-color:var(--gold);}
+    button[type="submit"] {
+      background:var(--accent);
+      color:var(--secondary);
+      border:none;
+      padding:0.8em 2.2em;
+      border-radius:0.9rem;
+      font-size:1.07rem;
+      font-family:var(--font-accent);
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 4px 16px #c1272d16;
+      transition:background 0.2s;
+      margin-right:1vw;
+    }
+    button[type="submit"]:hover {background:var(--gold);color:var(--primary);}
+    .section-minor {
+      color:#555;
+      font-size:1.15rem;
+      text-align:center;
+      margin-bottom:1vh;
+    }
+    /* Responsive */
+    @media(max-width:850px){
+      .products{ grid-template-columns:1fr;}
+      .features-grid{grid-template-columns:1fr;}
+      .pricing-cards{flex-direction:column;}
+    }
+    @media(max-width:480px){
+      .logo span{font-size:2rem;width:32px;height:32px;}
+      .hero h1{font-size:2.1rem;}
+      header{height:58px;padding:0 3vw;}
+      section{padding:3vh 3vw;}
+      .product-card{padding:2vh 1vw;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span>S</span>Sneakers</div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="#waitlist">Waitlist</a>
+      <a href="#preorder">PreOrder</a>
+    </nav>
+  </header>
+  <section class="hero" id="hero">
+    <h1>The S Series<br>Luxury Sneakers</h1>
+    <p>Step up to the world of exclusive, hand-crafted sneakers designed to redefine luxury.<br>Inspired by top brands like Nike and Adidas, each sneaker features a bold "S" logo for true sneaker connoisseurs.<br>Discover unrivaled style, comfort, and durability — get ready to stand out.[web:1][web:6][web:7]</p>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1517263904808-5dc0d6dd1ddd?auto=format&fit=crop&w=640&q=80" alt="Luxury S Sneakers">
+    </div>
+    <button class="cta-btn" onclick="document.getElementById('preorder').scrollIntoView({behavior:'smooth'});">PreOrder Now</button>
+  </section>
+  <section id="collection">
+    <div class="section-header">Explore Our Collection</div>
+    <div class="products">
+      <div class="product-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1519864601642-1aff2c1ed6fd?auto=format&fit=crop&w=500&q=80" alt="Sneaker S-Prime">
+          <span class="s-logo">S</span>
+        </div>
+        <div class="prod-title">S-Prime</div>
+        <div class="prod-desc">Handcrafted European leather, quilted accents and gold-thread stitching for a regal touch.</div>
+        <div class="specs">
+          - Ultra-soft memory foam insoles<br>
+          - Responsive air sole technology<br>
+          - Water & stain resistant finish<br>
+          - Limited edition, numbered[web:10][web:16]
+        </div>
+        <div class="prod-price">₹18,999</div>
+        <button class="prod-buy-btn">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1468542945401-ba4b0f5225e7?auto=format&fit=crop&w=500&q=80" alt="Sneaker S-Air Elite">
+          <span class="s-logo">S</span>
+        </div>
+        <div class="prod-title">S-Air Elite</div>
+        <div class="prod-desc">Breathable mesh panels meld with premium suede overlays. Advanced arch support for all-day wear.</div>
+        <div class="specs">
+          - Ultra-light structure<br>
+          - Carbon rubber outsole<br>
+          - Luxe metallic accents<br>
+          - Dynamic heel-lock fit[web:10][web:7]
+        </div>
+        <div class="prod-price">₹14,999</div>
+        <button class="prod-buy-btn">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1514846326717-0963d3188e43?auto=format&fit=crop&w=500&q=80" alt="Sneaker S-Classic">
+          <span class="s-logo">S</span>
+        </div>
+        <div class="prod-title">S-Classic</div>
+        <div class="prod-desc">Minimalist luxury design; tumbled leather. Timeless all-white silhouette for any occasion.</div>
+        <div class="specs">
+          - Reinforced toe box<br>
+          - Cushioned collar<br>
+          - Gold "S" logo<br>
+          - Stitched monogram lining[web:10][web:16]
+        </div>
+        <div class="prod-price">₹17,299</div>
+        <button class="prod-buy-btn">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=500&q=80" alt="Sneaker S-Sport">
+          <span class="s-logo">S</span>
+        </div>
+        <div class="prod-title">S-Sport</div>
+        <div class="prod-desc">High-performance knit, custom colorways, and shock-absorbing soles for movement lovers.</div>
+        <div class="specs">
+          - Moisture-wicking mesh<br>
+          - Multi-directional traction<br>
+          - Ergonomic fit for training & lifestyle[web:7][web:6]
+        </div>
+        <div class="prod-price">₹11,999</div>
+        <button class="prod-buy-btn">Buy Now</button>
+      </div>
+    </div>
+  </section>
+  <section class="features-grid" id="features">
+    <div class="feature-card">
+      <div class="feature-icon">👟</div>
+      <div class="feature-title">Luxury Build</div>
+      <div class="feature-desc">Crafted using premium leathers & suedes, designed for long-lasting elegance and ease.[web:7]</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title">Advanced Protection</div>
+      <div class="feature-desc">Water-repellent, stain-proof finish keeps sneakers pristine and ready for any adventure.[web:16]</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌬️</div>
+      <div class="feature-title">Breathable Comfort</div>
+      <div class="feature-desc">Innovative mesh and air sole tech provide unmatched airflow and foot support.[web:6][web:10]</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title">Performance Driven</div>
+      <div class="feature-desc">Multi-directional grip and shock absorption for active lifestyles and sport.[web:9]</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✨</div>
+      <div class="feature-title">Signature S Logo</div>
+      <div class="feature-desc">Distinct gold "S" logo represents exclusivity and style, inspired by luxury sneaker icons.[web:1][web:7]</div>
+    </div>
+  </section>
+  <section class="pricing-section" id="pricing">
+    <div class="section-header">Transparent Pricing</div>
+    <div class="pricing-cards">
+      <div class="price-card active">
+        <div class="price-title">Elite Limited</div>
+        <div class="price-amount">₹19,999/pair</div>
+        <div class="price-features">Exclusive collection; priority support,<br>free worldwide shipping, numbered edition[web:10]</div>
+      </div>
+      <div class="price-card">
+        <div class="price-title">Classic Premium</div>
+        <div class="price-amount">₹14,999/pair</div>
+        <div class="price-features">Signature S branding, luxury box,<br>lifetime warranty, customization option</div>
+      </div>
+      <div class="price-card">
+        <div class="price-title">Sport Active</div>
+        <div class="price-amount">₹11,999/pair</div>
+        <div class="price-features">High-performance features,<br>moisture protection, ergonomic fit</div>
+      </div>
+    </div>
+  </section>
+  <section id="knowmore">
+    <div class="section-header">Know More</div>
+    <div class="section-minor">
+      Every S sneaker is a blend of European craftsmanship, innovative sports engineering, and luxury aesthetic.<br>
+      Inspired by the world’s top brands, our sneakers deliver all-day comfort, bold statement style, and true collector value.[web:16][web:7]<br>
+      Each pair undergoes 42-quality checks, hand-lasted stitching, with eco-friendly processes.
+    </div>
+    <div style="text-align:center;margin-top:2vh;">
+      <button class="cta-btn" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'});">Join Waitlist</button>
+    </div>
+  </section>
+  <section id="waitlist" class="form-section">
+    <h3>Join the Waitlist</h3>
+    <form id="waitlistForm">
+      <label for="wlName">Name</label>
+      <input type="text" id="wlName" name="wlName" required>
+      <label for="wlEmail">Email</label>
+      <input type="email" id="wlEmail" name="wlEmail" required>
+      <button type="submit">Join Waitlist</button>
+      <span id="wlMsg" style="display:none;color:var(--gold);margin-left:1vw;">Thank you for joining! We'll keep you posted.</span>
+    </form>
+  </section>
+  <section id="preorder" class="form-section">
+    <h3>PreOrder Your Sneakers</h3>
+    <form id="preorderForm">
+      <label for="poName">Name</label>
+      <input type="text" id="poName" name="poName" required>
+      <label for="poEmail">Email</label>
+      <input type="email" id="poEmail" name="poEmail" required>
+      <label for="poModel">Choose Model</label>
+      <select id="poModel" name="poModel" required>
+          <option>S-Prime</option>
+          <option>S-Air Elite</option>
+          <option>S-Classic</option>
+          <option>S-Sport</option>
+      </select>
+      <button type="submit">PreOrder Now</button>
+      <span id="poMsg" style="display:none;color:var(--gold);margin-left:1vw;">Your preorder is received! Our team will contact you.</span>
+    </form>
+  </section>
+  <section id="contact" class="form-section">
+    <h3>Contact Us</h3>
+    <form id="contactForm">
+      <label for="ctName">Name</label>
+      <input type="text" id="ctName" name="ctName" required>
+      <label for="ctEmail">Email</label>
+      <input type="email" id="ctEmail" name="ctEmail" required>
+      <label for="ctMessage">Message</label>
+      <textarea id="ctMessage" name="ctMessage" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+      <span id="ctMsg" style="display:none;color:var(--gold);margin-left:1vw;">Thanks for reaching out. We reply within 24 hours!</span>
+    </form>
+  </section>
+  <footer style="background:var(--primary);color:#fff;padding:2vh 0;text-align:center;font-size:0.98rem;">
+    &copy; 2025 - S Sneakers | Crafted for Sneakerheads | Inspired by Nike, Adidas & luxury brands[web:1][web:7][web:10]
+  </footer>
+  <script>
+    // Emulate form submits
+    document.getElementById('waitlistForm').onsubmit = function(e){
+      e.preventDefault();
+      document.getElementById('wlMsg').style.display='inline';
+      setTimeout(()=>{document.getElementById('wlMsg').style.display='none';},3500);
+      this.reset();
+    }
+    document.getElementById('preorderForm').onsubmit = function(e){
+      e.preventDefault();
+      document.getElementById('poMsg').style.display='inline';
+      setTimeout(()=>{document.getElementById('poMsg').style.display='none';},3500);
+      this.reset();
+    }
+    document.getElementById('contactForm').onsubmit = function(e){
+      e.preventDefault();
+      document.getElementById('ctMsg').style.display='inline';
+      setTimeout(()=>{document.getElementById('ctMsg').style.display='none';},3500);
+      this.reset();
+    }
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.onclick=function(e){
+        const href=this.getAttribute('href');
+        if(href.startsWith('#')){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth'});
+        }
+      }
+    });
+    // Dynamic card selection (Pricing)
+    document.querySelectorAll('.price-card').forEach((card,idx,arr)=>{
+      card.onclick = function() {
+        arr.forEach(c=>c.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
